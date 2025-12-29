@@ -6,7 +6,7 @@ A cross-platform C++ implementation of bicubic interpolation for image scaling u
 
 - ✨ High-quality image upscaling using bicubic interpolation
 - 🎨 Full RGBA support (preserves transparency)
-- 🖥️ Cross-platform: macOS, Linux, and Windows
+- 🖥️ Cross-platform: macOS and Linux
 - ⚡ Fast performance with optimized algorithms (~200x faster than naive implementation)
 - 📦 Single-header library (CImg)
 - 🧹 Clean, maintainable code following modern C++ best practices
@@ -75,7 +75,7 @@ BicubicInterpolation/
 - Full RGBA channel support with transparency preservation
 
 **Makefile** - Build system with:
-- Automatic OS detection (macOS, Linux, Windows)
+- Automatic OS detection (macOS, Linux)
 - Platform-specific library paths
 - Help command (`make help`)
 

@@ -4,10 +4,8 @@ Thumbs.db
 
 # Build artifacts
 bicubic
-bicubic.exe
 a.out
 *.o
-*.obj
 
 # Output images
 change.png

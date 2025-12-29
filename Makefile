@@ -29,13 +29,6 @@ ifeq ($(UNAME_S),Linux)
 	# LDFLAGS += -lX11
 endif
 
-# Windows (MinGW/MSYS2) specific settings
-ifeq ($(findstring MINGW,$(UNAME_S)),MINGW)
-	TARGET = bicubic.exe
-	INCLUDES = 
-	LIB_PATHS = 
-endif
-
 # Build target
 $(TARGET): main.cpp image.png
 	@echo "Compiling for $(UNAME_S)..."

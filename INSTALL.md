@@ -25,14 +25,6 @@ sudo apt-get install build-essential libpng-dev libjpeg-dev zlib1g-dev
 sudo dnf install gcc-c++ libpng-devel libjpeg-devel zlib-devel
 ```
 
-### Windows (MSYS2/MinGW)
-
-```bash
-# Install MSYS2 from https://www.msys2.org/
-# Then in MSYS2 terminal:
-pacman -S mingw-w64-x86_64-gcc mingw-w64-x86_64-libpng mingw-w64-x86_64-libjpeg-turbo
-```
-
 ## Building
 
 ### Using Make (Recommended)
@@ -74,14 +66,6 @@ g++ main.cpp -o bicubic \
   -lpng -lz -ljpeg -lpthread -O2
 ```
 
-#### Windows (MinGW)
-
-```bash
-g++ main.cpp -o bicubic.exe \
-  -Dcimg_use_png -Dcimg_display=0 \
-  -lpng -lz -ljpeg -lpthread -O2
-```
-
 ## Running
 
 ```bash
@@ -101,13 +85,11 @@ g++ main.cpp -o bicubic.exe \
 
 - **macOS**: Ensure Homebrew is installed and run `brew install jpeg`
 - **Linux**: Install `libjpeg-dev` or `libjpeg-turbo-devel`
-- **Windows**: Install jpeg library via MSYS2 package manager
 
 ### Issue: "png.h not found"
 
 - **macOS**: Run `brew install libpng`
 - **Linux**: Install `libpng-dev`
-- **Windows**: Install libpng via MSYS2
 
 ### Issue: "CImg.h not found"
 
