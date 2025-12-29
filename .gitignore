@@ -1,1 +1,27 @@
+# OS files
 .DS_Store
+Thumbs.db
+
+# Build artifacts
+bicubic
+bicubic.exe
+a.out
+*.o
+*.obj
+
+# Output images
+change.png
+
+# Archives
+*.zip
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporary files
+*.tmp
+*.bak
