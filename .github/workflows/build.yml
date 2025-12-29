@@ -17,6 +17,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Download CImg.h
+        run: |
+          curl -L -o CImg.h https://raw.githubusercontent.com/GreycLab/CImg/master/CImg.h
+
       - name: Install dependencies (Ubuntu)
         if: runner.os == 'Linux'
         run: |
