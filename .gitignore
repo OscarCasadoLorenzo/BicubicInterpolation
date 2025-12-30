@@ -8,7 +8,7 @@ a.out
 *.o
 
 # Output images
-change.png
+output-image.png
 
 # Archives
 *.zip

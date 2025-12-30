@@ -75,25 +75,27 @@ int main(int argc, char* argv[]) {
 
     CImg<unsigned char> dst(width * scaleFactor, height * scaleFactor, 1, channels, 0);
 
-    for (int x = 0; x < height; x++) {
-        for (int y = 0; y < width; y++) {
+    // Copy original pixels to upscaled image at correct positions
+    for (int x = 0; x < width; x++) {
+        for (int y = 0; y < height; y++) {
             for (int c = 0; c < channels; c++) {
                 dst(x * scaleFactor, y * scaleFactor, 0, c) = src(x, y, 0, c);
             }
         }
     }
 
-    for (int i = 0; i < width * scaleFactor; i++) {
-        for (int j = 0; j < height * scaleFactor; j++) {
-            if (i % scaleFactor != 0 || j % scaleFactor != 0) {
+    // Interpolate missing pixels
+    for (int x = 0; x < width * scaleFactor; x++) {
+        for (int y = 0; y < height * scaleFactor; y++) {
+            if (x % scaleFactor != 0 || y % scaleFactor != 0) {
                 double colorMatrix[4][4];
-                double fracX = (double)(i % scaleFactor) / (double)scaleFactor;
-                double fracY = (double)(j % scaleFactor) / (double)scaleFactor;
+                double fracX = (double)(x % scaleFactor) / (double)scaleFactor;
+                double fracY = (double)(y % scaleFactor) / (double)scaleFactor;
                 for (int c = 0; c < channels; c++) {
-                    getNeighborhood(scaleFactor, src, colorMatrix, i, j, c);
+                    getNeighborhood(scaleFactor, src, colorMatrix, x, y, c);
                     double interpolated = bicubicInterpolate(colorMatrix, fracX, fracY);
                     interpolated = std::max(0.0, std::min(255.0, interpolated));
-                    dst(i, j, 0, c) = (unsigned char)interpolated;
+                    dst(x, y, 0, c) = (unsigned char)interpolated;
                 }
             }
         }
