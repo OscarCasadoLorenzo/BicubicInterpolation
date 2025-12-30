@@ -97,7 +97,7 @@ g++ main.cpp -o bicubic \
 
 ### Issue: "image.png not found"
 
-- Place your input image in the same directory and name it `image.png`
+- Place your input image in the same directory and name it `input-image.png`
 - Or modify the code to accept command-line image paths
 
 ## Dependencies
@@ -110,7 +110,7 @@ g++ main.cpp -o bicubic \
 
 ## Notes
 
-- The program creates `change.png` as output in the current directory
+- The program creates `output-image.png` as output in the current directory
 - Larger scale factors will significantly increase processing time
 - Alpha channel (transparency) is automatically preserved for PNG images
 - Display support (X11) is disabled by default for better portability

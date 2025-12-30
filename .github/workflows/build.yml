@@ -42,4 +42,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: output-${{ matrix.os }}
-          path: change.png
+          path: output-image.png

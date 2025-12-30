@@ -67,7 +67,7 @@ int main(int argc, char* argv[]) {
         exit(0);
     }
 
-    CImg<unsigned char> src("image.png");
+    CImg<unsigned char> src("input-image.png");
     int scaleFactor = atoi(argv[1]);
     int width = src.width();
     int height = src.height();
@@ -99,7 +99,7 @@ int main(int argc, char* argv[]) {
         }
     }
 
-    dst.save("change.png");
+    dst.save("output-image.png");
 
     unsigned endTime = clock();
     cout << "Processing time: " << (double(endTime - startTime) / CLOCKS_PER_SEC) << " s." << endl;

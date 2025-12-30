@@ -30,7 +30,7 @@ ifeq ($(UNAME_S),Linux)
 endif
 
 # Build target
-$(TARGET): main.cpp image.png
+$(TARGET): main.cpp input-image.png
 	@echo "Compiling for $(UNAME_S)..."
 	$(CXX) $(CXXFLAGS) main.cpp -o $(TARGET) $(INCLUDES) $(LIB_PATHS) $(LDFLAGS) $(LIBS)
 	@echo "Build complete: $(TARGET)"
@@ -44,9 +44,9 @@ run: $(TARGET)
 all: $(TARGET) run
 
 # Create distribution package
-zip: Makefile main.cpp CImg.h image.png README.md
+zip: Makefile main.cpp CImg.h input-image.png README.md
 	@echo "Creating distribution package..."
-	zip -r bicubic-interpolation.zip Makefile main.cpp CImg.h image.png README.md doc/
+	zip -r bicubic-interpolation.zip Makefile main.cpp CImg.h input-image.png README.md doc/
 
 # Clean build artifacts
 clean:

@@ -12,11 +12,11 @@ A cross-platform C++ implementation of bicubic interpolation for image scaling u
 
 ## Algorithm Workflow
 
-1. Load source image (`image.png`)
+1. Load source image (`input-image.png`)
 2. Create destination image with scaled dimensions
 3. Copy original pixels to scaled positions
 4. Interpolate missing pixels using 4x4 neighborhoods (bicubic interpolation)
-5. Save result as `change.png`
+5. Save result as `output-image.png`
 
 ## Quick Start
 
@@ -52,7 +52,7 @@ Bicubic interpolation is a high-quality image resampling method that uses the va
 
 ### How it works
 
-Thanks to the different data structures provided by the CImg library, we store the image _“image.png”_ that is present in the repository at that moment, which will be the image to which we apply the transformations based on bicubic interpolation.
+Thanks to the different data structures provided by the CImg library, we store the image _“input-image.png”_ that is present in the repository at that moment, which will be the image to which we apply the transformations based on bicubic interpolation.
 
 Next, we also initialize another set of key values required for the correct functioning of the algorithm: **scaleFactor** (an integer or decimal value by which the image will be scaled; that is, if an image is initially 100×100 pixels and the scaleFactor is set to 5, the resulting image will be 500×500 pixels), **width** (the width of the original image), and **height** (the height of the image expressed in pixels).
 
