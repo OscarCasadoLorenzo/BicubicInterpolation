@@ -122,6 +122,22 @@ Performance observations from older processors:
 
 ![Result Graph 2](./doc/images/Results_2.png)
 
+# Results
+
+## See the Power of Bicubic Interpolation
+
+Witness how bicubic interpolation can transform a tiny, pixelated image into a much larger, smooth, and detailed result. The comparison below demonstrates the effectiveness of the algorithm:
+
+|           Original (20px)           |        Upscaled (336px) [x16]         |
+| :---------------------------------: | :-----------------------------------: |
+| ![Input 20px](doc/images/Input.png) | ![Input 336px](doc/images/Result.png) |
+
+Notice how the upscaled image preserves details and smoothness, showcasing the strength of bicubic interpolation over simpler methods.
+
+![Input 20px](doc/images/Input.png)
+
+![Input 336px](doc/images/Result.png)
+
 ### Compilation Parameters
 
 #### -Ox Type Parameters
